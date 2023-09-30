@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewUrun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:contentDescription="favorile"
+                android:focusable="true"
+                app:backgroundTint="@color/white"
+                app:fabCustomSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="18dp"
+                app:srcCompat="@drawable/fav_icon"
+                app:shapeAppearanceOverlay="@style/circularShape"/>
+
+            <ImageView
+                android:id="@+id/imageViewUrunResim"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/laptop" />
+
+            <TextView
+                android:id="@+id/textViewUrunMarka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center|left"
+                android:text="Karaca"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textViewUrunAdi"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewUrunResim" />
+
+            <TextView
+                android:id="@+id/textViewUrunAdi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:gravity="end"
+                android:lines="1"
+                android:maxLines="2"
+                android:text="Hatır Kahve Makinesi"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+                app:layout_constraintStart_toEndOf="@+id/textViewUrunMarka"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewUrunResim"
+                app:layout_constraintVertical_bias="0.444" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="2"
+                android:theme="@style/RatingBar"
+                app:layout_constraintEnd_toStartOf="@+id/satinAlanKisiSayisi"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUrunMarka">
+
+            </RatingBar>
+
+            <TextView
+                android:id="@+id/satinAlanKisiSayisi"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:text="(30)"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUrunAdi">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/kamera"
+                android:layout_width="16dp"
+                android:layout_height="11dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/kamera"
+                app:layout_constraintStart_toEndOf="@+id/satinAlanKisiSayisi"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUrunAdi" />
+
+            <TextView
+                android:id="@+id/textViewUrunFiyat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="579 TL"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewUrunFiyat">
+
+                <ImageView
+                    android:id="@+id/fenomensecimi"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/fenomen_secimi" />
+                <ImageView
+                    android:id="@+id/kargobedava"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/kargo_bedava"/>
+                <ImageView
+                    android:id="@+id/krediyeuygun"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/krediye_uygun"/>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
